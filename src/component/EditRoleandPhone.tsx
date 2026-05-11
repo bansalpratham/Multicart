@@ -58,7 +58,6 @@ function EditRoleandPhone() {
 
   return (
     <div  className='min-h-screen flex items-center justify-center bg-linear-to-br from-gray-900 via-black to-gray-900 text-white p-6'>
-    <h2>Abhi role update krna hai</h2>
     <AnimatePresence>
     <motion.div
         initial = {{opacity:0 , y:40}}
