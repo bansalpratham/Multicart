@@ -44,44 +44,76 @@ function Register() {
 
     {/* for step1 Ui */}
     {step == 1 && 
-    <motion.div 
-    initial={{opacity:0 , y:40}}
-    animate = {{opacity:1 , y:0}}
-    exit={{opacity:0 , y:-40}}
-    transition={{duration:0.5}}
-    className='w-full max-w-lg text-center bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-10 border border-white/20'>
-        <h1 className='text-4xl font-bold mb-4 text-blue-400'>Welcome to Multicart</h1>
-    <p className='text-gray-300 mb-6'>Register with one of the following account type:</p>    
-    <div className='grid grid-cols-3 gap-3 mb-6'>
-        {
-            [
-                {label:"User" , icon:"👤" , value:"user"},
-                {label:"Vendor" , icon:"🏪" , value:"vendor"},
-                {label:"Admin" , icon:"🛠️" , value:"admin"},
-            ].map((item)=>(
-                <motion.div 
-                key={item.value}
-                whileHover={{scale: 1.1}}
-                whileTap={{ scale: 0.95}}
-               className='p-4 bg-white/5 hover:bg-white/20 cursor-pointer rounded-xl border border-white/30 shadow-lg flex flex-col items-center transition'
-               >
-                <span className='text-4xl mb-2'>{item.icon}</span>
-                <span className='text-sm font-medium'>{item.value}</span>
-                </motion.div>
-            ))
-        }
+<motion.div 
+initial={{opacity:0 , y:40}}
+animate={{opacity:1 , y:0}}
+exit={{opacity:0 , y:-40}}
+transition={{duration:0.5}}
+className='w-full max-w-lg text-center bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/10'
+>
+
+  {/* Logo */}
+  <div className='w-20 h-20 mx-auto rounded-2xl bg-blue-500/20 flex items-center justify-center text-4xl shadow-lg mb-6'>
+    🛒
+  </div>
+
+  {/* Heading */}
+  <h1 className='text-4xl font-bold mb-3 bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent'>
+    Welcome to MultiCart
+  </h1>
+
+  {/* Subtitle */}
+  <p className='text-gray-300 leading-relaxed mb-8'>
+    Your all-in-one multi-vendor marketplace where users can explore products,
+    vendors can manage stores, and admins can control the platform seamlessly.
+  </p>
+
+  {/* Features */}
+  <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8'>
+
+    <div className='bg-white/5 border border-white/10 rounded-2xl p-4'>
+      <div className='text-3xl mb-2'>👤</div>
+      <h3 className='font-semibold text-white'>Users</h3>
+      <p className='text-xs text-gray-400 mt-1'>
+        Shop products from multiple vendors easily.
+      </p>
     </div>
-   
-   <motion.button
-   onClick={()=>setStep(2)}
-    whileHover={{scale: 1.03}}
-    whileTap={{ scale: 0.95}}
-    className='mt-4 px-8 py-3 flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 rounded-xl font-medium w-full '
-   >
-    Next<TbPlayerTrackNext size={20} />
+
+    <div className='bg-white/5 border border-white/10 rounded-2xl p-4'>
+      <div className='text-3xl mb-2'>🏪</div>
+      <h3 className='font-semibold text-white'>Vendors</h3>
+      <p className='text-xs text-gray-400 mt-1'>
+        Manage your products and orders efficiently.
+      </p>
+    </div>
+
+    <div className='bg-white/5 border border-white/10 rounded-2xl p-4'>
+      <div className='text-3xl mb-2'>🛠️</div>
+      <h3 className='font-semibold text-white'>Admin</h3>
+      <p className='text-xs text-gray-400 mt-1'>
+        Control users, vendors and platform activity.
+      </p>
+    </div>
+
+  </div>
+
+  {/* Buttons */}
+  <div className='flex flex-col gap-4'>
+
+    <motion.button
+      onClick={() => setStep(2)}
+      whileHover={{scale:1.02}}
+      whileTap={{scale:0.97}}
+      className='w-full py-3 rounded-xl bg-blue-500 hover:bg-blue-600 transition font-medium flex items-center justify-center gap-2'
+    >
+      Create Account
+      <TbPlayerTrackNext size={20} />
     </motion.button>
-   
-    </motion.div>}
+
+  </div>
+
+</motion.div>
+}
     {/* for step2 Ui */}
     {step == 2 && 
     <motion.div className='w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20'
